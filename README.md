@@ -29,20 +29,49 @@ The API uses DuckDB to query the SEEG-12-dados-nacionais database in read-only m
   Retrieve data rows filtered by a combination of parameters such as year range, state, emission sector, gas type, and more.
 
 - **Query Parameters:**
-  - **start_year** (*int*, **required**): The start year for filtering the data.
-  - **end_year** (*int*, **required**): The end year for filtering the data.
-  - **limit** (*int*, *optional*, default: 10): The maximum number of records to return.
-  - **emissao_type** (*str*, *optional*): Filter for emission type (e.g., "Emissão", "Remoção", "Bunker").
-  - **gas** (*str*, *optional*, default: `"CO2e (t) GWP-AR5"`): Filter for the type of gas.
-  - **setor** (*str*, *optional*): Filter for the emission sector.
-  - **estado** (*str*, *optional*): Filter for the state.
-  - **categoria** (*str*, *optional*): Filter for the emitter category (specific to LULUCF).
-  - **subcategoria** (*str*, *optional*): Filter for the emitter sub-category (specific to LULUCF).
-  - **atividade** (*str*, *optional*): Filter for the general activity (specific to LULUCF).
-  - **recorte** (*str*, *optional*): Filter for other sectors.
-  - **produto** (*str*, *optional*): Filter for product or system.
-  - **detalhamento** (*str*, *optional*): Filter for detailed classification.
-  - **bioma** (*str*, *optional*): Filter for the biome.
+  - **start_year** (*int*, **required**)  
+    Filter for the starting year of emissions data. Maps to year columns: `"1970"` to `"2023"`.
+  
+  - **end_year** (*int*, **required**)  
+    Filter for the ending year of emissions data. Maps to year columns: `"1970"` to `"2023"`.
+  
+  - **limit** (*int*, *optional*, default: 10)  
+    Maximum number of rows to return. To get all results, set a high number (e.g., 100000).
+  
+  - **emissao_type** (*str*, *optional*)  
+    Maps to column: `"Emissão/Remoção/Bunker"`  
+    Example values: `"Emissão"`, `"Remoção"`, `"Bunker"`
+  
+  - **gas** (*str*, *optional*, default: `"CO2e (t) GWP-AR5"`)  
+    Maps to column: `"Gás"`  
+    Example values: `"CO2 (t)"`, `"CH4 (t)"`, `"N2O (t)"`
+  
+  - **setor** (*str*, *optional*)  
+    Maps to column: `"Setor de emissão"`
+  
+  - **estado** (*str*, *optional*)  
+    Maps to column: `"Estado"`
+  
+  - **categoria** (*str*, *optional*)  
+    Maps to column: `"Categoria emissora"`
+  
+  - **subcategoria** (*str*, *optional*)  
+    Maps to column: `"Sub-categoria emissora"`
+  
+  - **atividade** (*str*, *optional*)  
+    Maps to column: `"Atividade geral"`
+  
+  - **recorte** (*str*, *optional*)  
+    Maps to column: `"Recorte"`
+  
+  - **produto** (*str*, *optional*)  
+    Maps to column: `"Produto ou sistema"`
+  
+  - **detalhamento** (*str*, *optional*)  
+    Maps to column: `"Detalhamento"`
+  
+  - **bioma** (*str*, *optional*)  
+    Maps to column: `"Bioma"`
 
 - **Example Request:**
 
