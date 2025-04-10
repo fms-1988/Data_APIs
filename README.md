@@ -1,7 +1,3 @@
-Below is a detailed documentation for the SEEG v12 API.
-
----
-
 # SEEG v12 API Documentation
 
 The SEEG v12 API provides access to environmental data from the SEEG project version 12. The original dataset is available on the [SEEG project website](https://seeg.eco.br/linha/), and the API can be accessed via [api_seeg.carbonprice.top](https://api_seeg.carbonprice.top).
