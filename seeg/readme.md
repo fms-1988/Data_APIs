@@ -24,7 +24,7 @@ The API uses DuckDB to query the SEEG-12-dados-nacionais database in read-only m
 
 ### 2. Filter Data
 
-- **Endpoint:** `GET /filter_data`
+- **Endpoint:** `GET /seeg/filter_data`
 - **Description:**  
   Retrieve data rows filtered by a combination of parameters such as year range, state, emission sector, gas type, and more.
 
@@ -95,7 +95,7 @@ The API uses DuckDB to query the SEEG-12-dados-nacionais database in read-only m
 
 ### 3. Unique Values
 
-- **Endpoint:** `GET /unique_values/{column_name}`
+- **Endpoint:** `GET /seeg/unique_values/{column_name}`
 - **Description:**  
   Retrieve all unique values from a specified column in the database.
   
