@@ -2,7 +2,7 @@
 
 The SIRENE v7 API provides access to emissions data from the [SIRENE project](https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/sirene), maintained by the Brazilian Ministry of Science, Technology and Innovation (MCTI). The API supports filtering by sector, NFR code/description, and greenhouse gas type over a range of years (1990–2022).
 
-All endpoints are available under the same host: [https://api_seeg.carbonprice.top](https://api_seeg.carbonprice.top)
+All endpoints are available under the same host: [https://api.carbonprice.top](https://api.carbonprice.top)
 
 ---
 
@@ -43,7 +43,7 @@ All endpoints are available under the same host: [https://api_seeg.carbonprice.t
   Get N2O data for the "Energia" sector between 2005 and 2010:
   
   ```
-  GET https://api_seeg.carbonprice.top/sirene/filter_data?start_year=2005&end_year=2010&setor_nfr=Energia&gas=N2O
+  GET https://api.carbonprice.top/sirene/filter_data?start_year=2005&end_year=2010&setor_nfr=Energia&gas=N2O
   ```
 
 - **Unlimited Search Example:**
@@ -51,7 +51,7 @@ All endpoints are available under the same host: [https://api_seeg.carbonprice.t
   Get all CO2e emissions from all sectors between 2000 and 2020:
 
   ```
-  GET https://api_seeg.carbonprice.top/sirene/filter_data?start_year=2000&end_year=2020&gas=CO2e_GWP_AR5&limit=100000
+  GET https://api.carbonprice.top/sirene/filter_data?start_year=2000&end_year=2020&gas=CO2e_GWP_AR5&limit=100000
   ```
 
 ---
@@ -73,7 +73,7 @@ All endpoints are available under the same host: [https://api_seeg.carbonprice.t
   Get all available gases in the SIRENE database:
   
   ```
-  GET https://api_seeg.carbonprice.top/sirene/unique_values/gas
+  GET https://api.carbonprice.top/sirene/unique_values/gas
   ```
 
 - **Response Example:**
