@@ -43,8 +43,11 @@ All endpoints are available under the same host: [https://api.carbonprice.top](h
   Get N2O data for the "Energia" sector between 2005 and 2010:
   
   ```
-  GET https://api.carbonprice.top/sirene/filter_data?start_year=2005&end_year=2010&setor_nfr=Energia&gas=N2O
+  GET https://api.carbonprice.top/sirene/filter_data?start_year=2005&end_year=2010&nfr_description=Agropecu%C3%A1ria&gas=N2O
   ```
+
+     
+
 
 - **Unlimited Search Example:**
 
