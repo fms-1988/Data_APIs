@@ -1,6 +1,6 @@
 # SEEG v12 API Documentation
 
-The SEEG v12 API provides access to environmental data from the SEEG project version 12. The original dataset is available on the [SEEG project website](https://seeg.eco.br/linha/), and the API can be accessed via [api_seeg.carbonprice.top](https://api_seeg.carbonprice.top).
+The SEEG v12 API provides access to environmental data from the SEEG project version 12. The original dataset is available on the [SEEG project website](https://seeg.eco.br/linha/), and the API can be accessed via [api.carbonprice.top](https://api.carbonprice.top).
 
 The API uses DuckDB to query the SEEG-12-dados-nacionais database in read-only mode. It includes endpoints for a simple health check, filtering data with various parameters, and retrieving unique values from specific columns.
 
@@ -16,7 +16,7 @@ The API uses DuckDB to query the SEEG-12-dados-nacionais database in read-only m
 - **Response Example:**
   ```json
   {
-    "message": "SEEG v12 API is up and running!"
+    "message": "SEEG v12 and SIRENE v7 API is up and running!"
   }
   ```
 
@@ -78,7 +78,7 @@ The API uses DuckDB to query the SEEG-12-dados-nacionais database in read-only m
   Retrieve records for Minas Gerais in the "Agropecuária" sector, filtering for the gas "N2O (t)" between the years 2005 and 2010, and limiting the result to 15 records:
   
   ```
-  GET https://api_seeg.carbonprice.top/filter_data?start_year=2005&end_year=2010&estado=Minas%20Gerais&setor=Agropecu%C3%A1ria&gas=N2O%20(t)&limit=15
+  GET https://api.carbonprice.top/seeg/filter_data?start_year=2005&end_year=2010&estado=Minas%20Gerais&setor=Agropecu%C3%A1ria&gas=N2O%20(t)&limit=15
   ```
 
 - **Unlimited Search:**
@@ -86,7 +86,7 @@ The API uses DuckDB to query the SEEG-12-dados-nacionais database in read-only m
   The API uses a `limit` parameter to control the number of returned records. To effectively “unlimit” your search, set the `limit` to a value that exceeds the expected number of matching records. For instance, if you expect fewer than 100,000 rows, you can use:
   
   ```
-  GET https://api_seeg.carbonprice.top/filter_data?start_year=2005&end_year=2010&limit=100000
+  GET https://api.carbonprice.top/seeg/filter_data?start_year=2005&end_year=2010&limit=100000
   ```
   
   *Note:* Currently, the API always applies a `LIMIT` clause. Adjust the `limit` parameter to a sufficiently high number if you wish to retrieve all results, or consider modifying the API code to remove the limit if necessary.
@@ -118,7 +118,7 @@ The API uses DuckDB to query the SEEG-12-dados-nacionais database in read-only m
   To retrieve all unique gas types:
   
   ```
-  GET https://api_seeg.carbonprice.top/unique_values/Gás
+  GET https://api.carbonprice.top/seeg/unique_values/Gás
   ```
   
 - **Response Example:**
